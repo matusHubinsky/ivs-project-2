@@ -1,0 +1,10 @@
+
+# Unix style newlines and EOF
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# all python files and Makefile
+[{*.py, Makefile}]
+indent_style = tab
+indent_size = 4
