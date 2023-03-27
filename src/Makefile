@@ -34,7 +34,7 @@ pack:
 
 #Option test runs tests for math library
 test:
-	$(PY) test.py
+	pytest test.py
 
 #Option run runs the program
 run:
