@@ -15,30 +15,31 @@
 #
 # ##################################################################
 
-PY = python
+PY = python3
+PYFLAGS = 
 
-FLAGS = 
+EXECUTABLE=calculator
 
-MAIN = test.py, gui.py
-
-GUI = gui.py
-
+ZIPNAME = xhubin04_xduric07_xhatal02
+ZIPFILES = ${shell cd ..} ${shell cd..} ${shell ls}
 
 #Option all compiles whole project also profiling
-all:
-	$(PY) $(FLAGS) $(MAIN)
+all: $(EXECUTABLE) 
+
+$(EXECUTABLE): core.py gui.py
+	$(PY) $(PYFLAGS) $^
 
 #Option pack packs-up contents of the project for handing out
-pack:
-	zip xhubin04_xduric07_xhatal02.zip $(MAIN)
+pack: *.py Makefile
+	cd .. && zip -r $(ZIPNAME) *
 
 #Option test runs tests for math library
 test:
-	pytest test.py
+	$(PY) $@
 
 #Option run runs the program
-run:
-	$(PY) $(GUI)
+run: guy.py core.py
+	$(PY) $^
 
 #Option doc generates documentation for the project
 doc:
@@ -50,23 +51,8 @@ profile:
 
 #Option clean removes all the files that have been created after compiling and are not needed for handing out the project
 clean:
-	rm -rf 
+	rm -r $(EXECUTABLE) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.PHONY: clean
 
 ### End of file Makefile ###
