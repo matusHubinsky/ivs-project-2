@@ -16,6 +16,7 @@
 # ##################################################################
 
 PY = python3
+PYTEST = pytest
 PYFLAGS = 
 
 EXECUTABLE=calculator
@@ -35,7 +36,7 @@ pack: *.py Makefile
 
 #Option test runs tests for math library
 test:
-	$(PY) $@
+	 $(PYTEST) $@
 
 #Option run runs the program
 run: guy.py core.py
