@@ -18,6 +18,7 @@ def calculate(entry) -> None:
 		entry.delete(0, tk.END)
 		entry.insert(tk.END, "Error")
 
+
 # @brief calculate addition of two numbers
 # @param a 
 # @param b
@@ -30,7 +31,7 @@ def add(a, b) -> int:
 # @param a
 # @param b
 # @return 
-def subtract(a, b) -> int:
+def sub(a, b) -> int:
 	return a - b
 
 
@@ -38,7 +39,7 @@ def subtract(a, b) -> int:
 # @param a
 # @param b
 # @return 
-def multiply(a, b) -> int:
+def mul(a, b) -> int:
 	return a * b
 
 
@@ -46,9 +47,9 @@ def multiply(a, b) -> int:
 # @param a
 # @param b, can't be zero
 # @return 
-def divide(a, b) -> int:
+def div(a, b) -> int:
 	if (b == 0):
-		print('Error: division by zero')
+		raise ZeroDivisionError('Error: division by zero')
 	return a / b
 
 
@@ -56,17 +57,17 @@ def divide(a, b) -> int:
 # @param a
 # @param b, exponent
 # @return 
-def exponent(a, b) -> None:
+def exp(a, b) -> None:
 	return a ** b
 
 
 # @brief calculate factorial of a number, factorial of 0 is 1
 # @param a
 # @return 
-def factorial(a) -> None:
+def fac(a) -> None:
 	# error handling
 	if (a < 0):
-		print("Error: can't calculate factorial of a negative number")	
+		raise ValueError("Error: can't calculate factorial of a negative number")	
  	# calculate factorial
 	if ((a == 1) or (a == 0)):
 		return 1
@@ -79,7 +80,7 @@ def factorial(a) -> None:
 # @return 
 def root(x, n) -> None:
 	if (n < 0):
-		print('Error: negative root is not defied')
-	if ((x > 0) and (n%2 == 0)):
-		print("Error: cant calculate odd root of negative number")
+		raise ValueError('Error: negative root is not defied')
+	if ((x < 0) and (n%2 == 0)):
+		raise ValueError("Error: cant calculate odd root of negative number")
 	return x**(1/n)
