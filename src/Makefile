@@ -21,13 +21,10 @@ PYFLAGS =
 
 EXECUTABLE=calculator
 
-ZIPNAME = xhubin04_xduric07_xhatal02
-ZIPFILES = ${shell cd ..} ${shell cd..} ${shell ls}
+ZIPNAME = xhubin04_xduric07_xhatal02.zip
 
 #Option all compiles whole project also profiling
-all: $(EXECUTABLE) 
-
-$(EXECUTABLE): core.py gui.py
+all: core.py gui.py
 	$(PY) $(PYFLAGS) $^
 
 #Option pack packs-up contents of the project for handing out
@@ -39,7 +36,7 @@ test:
 	 $(PYTEST) $@
 
 #Option run runs the program
-run: guy.py core.py
+run: gui.py core.py dark_title_bar.py
 	$(PY) $^
 
 #Option doc generates documentation for the project
