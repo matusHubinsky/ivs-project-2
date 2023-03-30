@@ -1,7 +1,5 @@
 import os
-from dark_title_bar import *
 from tkinter import *
-#from PIL import ImageTk, Image
 import tkinter as tk
 import core
 
@@ -27,7 +25,6 @@ window.resizable(False, False)
 # Background color
 window.config(bg='#ADAEB3')
 
-dark_title_bar(window, '#ADAEB3')
 # Use the os module to get the absolute path of the icon image file
 icon_file = os.path.abspath('icon.png')
 icon = PhotoImage(file=icon_file)
