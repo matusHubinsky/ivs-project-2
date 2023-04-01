@@ -65,9 +65,11 @@ def on_enter_top(button):
 def on_leave_top(button):
     button.config(bg='#898C96', fg='white')
 
-def calculate_result(core):
-    tmp = core.calculate(entry)
+def calculate_result():
+    tmp = core.calculate(entry.get())
+    entry.delete(0, tk.END)
     entry.insert(tk.END, tmp)
+    
 # Create the buttons
 button_1 = tk.Button(window, text="1", width=5, font=("Arial", 19), height=1, fg = 'white', bg='#898C96',
                      relief='ridge', bd=3, command=lambda: entry.insert(tk.END, "1"))

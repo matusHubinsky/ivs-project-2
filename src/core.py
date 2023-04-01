@@ -6,17 +6,12 @@
 
 import tkinter as tk
 
+
 ##
 # @brief Process the input stored in entry, call function to calculate the result and prints it back to entry
 # @bug doesn't work yet
-def calculate(entry) -> None:
-	try:
-		result = eval(entry.get())
-		entry.delete(0, tk.END)
-		entry.insert(tk.END, result)
-	except:
-		entry.delete(0, tk.END)
-		entry.insert(tk.END, "Error")
+def calculate(gui_input) -> None:
+	return eval(gui_input)
 
 
 # @brief calculate addition of two numbers
