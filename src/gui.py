@@ -102,7 +102,7 @@ button_divide = tk.Button(window, text="/", width=5, font=("Arial", 19), height=
 button_root = tk.Button(window, text=chr(0x221A), width=5, font=("Arial", 19), height=1, relief='ridge', fg = 'white',
                         bd=3, bg='#898C96', command=lambda: entry.insert(tk.END, chr(0x221A)))
 button_power = tk.Button(window, text="pow", width=5, font=("Arial", 19), height=1, relief='ridge', fg = 'white',
-                         bd=3, bg='#898C96', command=lambda: entry.insert(tk.END, "**"))
+                         bd=3, bg='#898C96', command=lambda: entry.insert(tk.END, "^"))
 button_faktorial = tk.Button(window, text="!", width=5, height=1, relief='ridge', fg = 'white', font=("Arial", 19),
                              bd=3, bg='#898C96', command=lambda: entry.insert(tk.END, "!"))
 button_neg = tk.Button(window, text="neg", width=5, fg = 'white', font=("Arial", 19),
