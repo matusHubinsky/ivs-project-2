@@ -1,81 +1,92 @@
-##
-# @file core.py
+################################################################################
+# Name of the project: ivs project 2
 #
-# @brief Calculating results from gui input
+###############################################################################
 #
+# @file core
+# @brief Core of the calculator. Reads the input and calculates the resoult. 
+# 	
+# At first, create grammar for the parser. Then parse input. Parser creates tree
+# that is procesed and math functions are calculated in mathlib.py
+#	
+# @date 29.03.2023
+#
+# @author Matúš Hubinský
+#
+###############################################################################
 
+import mathlib
 import tkinter as tk
 
-
-##
-# @brief Process the input stored in entry, call function to calculate the result and prints it back to entry
-# @bug doesn't work yet
-def calculate(gui_input) -> None:
-	return eval(gui_input)
+# The MIT License (MIT)
+from lark import Lark, Transformer, v_args
 
 
-# @brief calculate addition of two numbers
-# @param a 
-# @param b
-# @return
-def add(a, b) -> int:
-	return a + b
+###############################################################################
+# authors: Sasank Chilamkurthy, Erez Shinan
+# license: MIT
+# edited code from github repository:
+# https://github.com/lark-parser/lark/blob/master/examples/calc.py
 
 
-# @brief calculate substract of two numbers
-# @param a
-# @param b
-# @return 
-def sub(a, b) -> int:
-	return a - b
+
+# definicion of a grammar for parser
+# TODO: sqrt()
+grammar = """
+	?start: sum
+		  | NAME "=" sum    	-> assign_var
+	?sum: product
+		| sum "+" product   	-> add
+		| sum "-" product   	-> sub
+	?product: atom
+ 		| product "^" atom 		-> exp
+		| product "*" atom  	-> mul
+		| product "/" atom  	-> div
+		| product "sqrt" atom 	-> root
+	?atom: NUMBER           	-> number
+		| atom "!"				> fac
+		| "-" atom         		-> neg
+		| NAME             		-> var
+		| "(" sum ")"
+	%import common.CNAME -> NAME
+	%import common.NUMBER
+	%import common.WS_INLINE
+	%ignore WS_INLINE
+"""
 
 
-# @brief multiply two numbers
-# @param a
-# @param b
-# @return 
-def mul(a, b) -> int:
-	return a * b
+@v_args(inline=True)    # Affects the signatures of the methods
+class CalculateTree(Transformer):
+	from mathlib import add, sub, mul, div, fac, exp, neg, root
+	number = float
+
+	def __init__(self):
+		self.vars = {}
+
+	def assign_var(self, name, value):
+		self.vars[name] = value
+		return value
+
+	def var(self, name):
+		try:
+			return self.vars[name]
+		except KeyError:
+			raise Exception("Variable not found: %s" % name)
 
 
-# @brief divade two numbers
-# @param a
-# @param b, can't be zero
-# @return 
-def div(a, b) -> int:
-	if (b == 0):
-		raise ZeroDivisionError('Error: division by zero')
-	return a / b
+# @author Matúš Hubinský, Sasank Chilamkurthy, Erez Shinan
+# @brief procesing data from gui and calculating result
+#  
+# Create parser from Lark library. This parser is using grammar defined prieviously.
+# Parser creates ASS that is procesed by CalculateTree() function. In this funcion,
+# we are caling our math library named mathlib.py
+# 
+# @param data, input data from user 
+def calculate(data) -> None:
+    # TODO: replace(0x221A,sprt)
+	calc_parser = Lark(grammar, parser='lalr', transformer=CalculateTree())
+	calc = calc_parser.parse
+	print(calc(data))
+	return calc(data)
 
-
-# @brief calculate resoult a to b power
-# @param a
-# @param b, exponent
-# @return 
-def exp(a, b) -> None:
-	return a ** b
-
-
-# @brief calculate factorial of a number, factorial of 0 is 1
-# @param a
-# @return 
-def fac(a) -> None:
-	# error handling
-	if (a < 0):
-		raise ValueError("Error: can't calculate factorial of a negative number")	
- 	# calculate factorial
-	if ((a == 1) or (a == 0)):
-		return 1
-	return fac(a) * fac(a - 1)
-
-
-# @brief calculate n rooth from nuber x
-# @param x
-# @param n
-# @return 
-def root(x, n) -> None:
-	if (n < 0):
-		raise ValueError('Error: negative root is not defied')
-	if ((x < 0) and (n%2 == 0)):
-		raise ValueError("Error: cant calculate odd root of negative number")
-	return x**(1/n)
+###############################################################################
