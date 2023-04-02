@@ -3,14 +3,13 @@
 #
 ###############################################################################
 #
-# @file core
+# @file core.py
 # @brief Core of the calculator. Reads the input and calculates the resoult. 
 # 	
 # At first, create grammar for the parser. Then parse input. Parser creates tree
 # that is procesed and math functions are calculated in mathlib.py
 #	
-# @date 29.03.2023
-#
+# @date 02.04.2023
 # @author Matúš Hubinský
 #
 ###############################################################################
