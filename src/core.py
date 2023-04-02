@@ -34,19 +34,19 @@ from lark import Lark, Transformer, v_args
 # TODO: sqrt()
 grammar = """
 	?start: sum
-		  | NAME "=" sum    	-> assign_var
+		  | NAME "=" sum    		-> assign_var
 	?sum: product
-		| sum "+" product   	-> add
-		| sum "-" product   	-> sub
+		| sum "+" product   		-> add
+		| sum "-" product   		-> sub
 	?product: atom
- 		| product "^" atom 		-> exp
-		| product "*" atom  	-> mul
-		| product "/" atom  	-> div
-		| product "sqrt" atom 	-> root
-	?atom: NUMBER           	-> number
-		| atom "!"				> fac
-		| "-" atom         		-> neg
-		| NAME             		-> var
+ 		| product "^" atom 			-> exp
+		| product "*" atom  		-> mul
+		| product "/" atom  		-> div
+	?atom: NUMBER           		-> number
+		| atom "$" atom 			-> root
+		| atom "!"					-> fac 
+		| "-" atom         			-> neg
+		| NAME             			-> var
 		| "(" sum ")"
 	%import common.CNAME -> NAME
 	%import common.NUMBER
@@ -83,7 +83,7 @@ class CalculateTree(Transformer):
 # 
 # @param data, input data from user 
 def calculate(data) -> None:
-    # TODO: replace(0x221A,sprt)
+	data = data.replace(chr(0x221A), '$')
 	calc_parser = Lark(grammar, parser='lalr', transformer=CalculateTree())
 	calc = calc_parser.parse
 	print(calc(data))

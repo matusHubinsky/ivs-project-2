@@ -75,15 +75,17 @@ def fac(tree, a) -> None:
 # @param n
 # @return 
 def root(tree, x, n) -> None:
+	if (n == 1):
+		raise ValueError('Error: root must be more than one')
 	if (n < 0):
 		raise ValueError('Error: negative root is not defied')
 	if ((x < 0) and (n%2 == 0)):
 		raise ValueError("Error: cant calculate odd root of negative number")
-	return x**(1/n)
+	return n**(1/x)
 
 
 # @brief negate a 
 # @param a
 # @return negation of a number
 def neg(tree, a) -> None:
-    return -a
+	return -a
