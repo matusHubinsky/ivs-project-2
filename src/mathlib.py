@@ -67,14 +67,16 @@ def fac(tree, a) -> None:
  	# calculate factorial
 	if ((a == 1) or (a == 0)):
 		return 1
-	return fac(a) * fac(a - 1)
+	return a * fac(None, a - 1)
 
 
 # @brief calculate n rooth from nuber x
 # @param x
 # @param n
 # @return 
-def root(tree, x, n) -> None:
+def root(tree, n, x) -> None:
+	if (x == 0 or x == 1):
+		return x
 	if (n == 1):
 		raise ValueError('Error: root must be more than one')
 	if (n < 0):
