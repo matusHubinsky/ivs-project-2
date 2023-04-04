@@ -1,3 +1,16 @@
+###############################################################################
+# Name of the project: ivs project 2
+#
+###############################################################################
+#
+# @file gui.py
+# @brief gui for the calculator
+#
+# @date 04.04.2023
+# @author Adam Ďurica
+#
+###############################################################################
+
 import os
 from tkinter import *
 from tkinter import messagebox
@@ -15,20 +28,20 @@ menu_bar = Menu(window, background='#ADAEB3', relief='flat')
 help_menu = Menu(menu_bar, tearoff=0)
 help_menu.add_command(label="About", command=lambda: messagebox.showinfo("About", "Softhorn Calculator\nVersion 1.0\n\nThis calculator was created by Softhorn team."))
 help_menu.add_command(label="Commands", command=lambda: messagebox.showinfo("Commands", "Available commands:\n\n" + "\n".join(COMMANDS)))
-
 menu_bar.add_cascade(label="Help", menu=help_menu)
 
 # Display the menu bar
 window.config(menu=menu_bar)
 
 
-# Define the function to move the window with cursor
+# Define the function to enable movement while draging the entry widget
 def move_window(event):
     global x, y
     new_x = (window.winfo_x() - x) + event.x
     new_y = (window.winfo_y() - y) + event.y
     window.geometry(f"+{new_x}+{new_y}")
 
+# Fuction to implement draging of the widget 
 def start_drag(event):
     global x, y
     x, y = event.x, event.y
@@ -49,6 +62,7 @@ window.iconphoto(False, icon)
 entry = Entry(window, width=19, font=("Arial", 28), bg='grey90', relief='flat')
 entry.grid(row=1, column=0, columnspan=4, padx=5, pady=20, ipady=25)
 
+# Creates the hover over button funtion that changes color of the button on entering
 def on_enter(button):
     button.config(bg='#DCE9F2', fg='black')
 def on_leave(button):
@@ -69,11 +83,14 @@ def on_enter_backspace(button):
 def on_leave_backspace(button):
     button.config(bg='#FF6347', fg='white')
 
+###############################################################################
+# Calls the funtion from core to calculate the result of inserted formula
 def calculate_result():
     tmp = core.calculate(entry.get())
     entry.delete(0, END)
     entry.insert(END, tmp)
 
+# Funtion that negates the FIRST inserted number
 def negate_number():
     current_value = entry.get()
     if current_value.startswith('-'):
@@ -82,7 +99,6 @@ def negate_number():
         entry.insert(0, '-')  # insert negative sign
 
 # Create the buttons
-
 button_1 = Button(window, text="1", width=5, font=("Arial", 19), height=1, fg = 'white', bg='#898C96',
                      relief='flat', bd=3, command=lambda: entry.insert(END, "1"))
 button_2 = Button(window, text="2", width=5, font=("Arial", 19), height=1, fg = 'white', bg='#898C96',
@@ -134,37 +150,45 @@ button_dot = Button(window, text=".", width=5, font=("Arial", 19), height=1, fg 
 
 
 
-# Add the buttons to the window\
+# Add the buttons to the window
+# First row of buttons
 button_backspace.grid(row=2, column=0)
 button_left_bracket.grid(row=2, column=1)
 button_rigth_bracket.grid(row=2, column=2)
 button_clear.grid(row=2, column=3)
 
+# Second row of buttons
 button_root.grid(row=3, column=0)
 button_power.grid(row=3, column=1)
 button_faktorial.grid(row=3, column=2)
 button_divide.grid(row=3, column=3)
 
+# Third row of buttons
 button_1.grid(row=4, column=0)
 button_2.grid(row=4, column=1)
 button_3.grid(row=4, column=2)
 button_plus.grid(row=4, column=3)
 
+# Forth row of buttons
 button_4.grid(row=5, column=0)
 button_5.grid(row=5, column=1)
 button_6.grid(row=5, column=2)
 button_minus.grid(row=5, column=3)
 
+# Fifth row of buttons
 button_7.grid(row=6, column=0)
 button_8.grid(row=6, column=1)
 button_9.grid(row=6, column=2)
 button_multiply.grid(row=6, column=3)
 
+# Sixth row of buttons
 button_neg.grid(row=7, column=0)
 button_0.grid(row=7, column=1)
 button_dot.grid(row=7, column=2)
 button_equal.grid(row=7, column=3)
 
+###############################################################################
+# Bind the on_enter and on_leave funtions to buttons
 button_1.bind("<Enter>", lambda event, button=button_1: on_enter(button))
 button_1.bind("<Leave>", lambda event, button=button_1: on_leave(button))
 
@@ -237,6 +261,7 @@ button_backspace.bind("<Leave>", lambda event, button=button_backspace: on_leave
 button_dot.bind("<Enter>", lambda event, button=button_dot: on_enter(button))
 button_dot.bind("<Leave>", lambda event, button=button_dot: on_leave(button))
 
+###############################################################################
 # Define the commands available in the calculator
 COMMANDS = [    "1 ~ Inserts number 1", "2 ~ Inserts number 2", "3 ~ Inserts number 3", "4 ~ Inserts number 4",
                 "5 ~ Inserts number 5", "6 ~ Inserts number 6", "7 ~ Inserts number 7", "8 ~ Inserts number 8",
@@ -247,7 +272,7 @@ COMMANDS = [    "1 ~ Inserts number 1", "2 ~ Inserts number 2", "3 ~ Inserts num
                 "⌫ ~ Deletes the last inserted character", "( ~ Inserts left bracket", ") ~ Inserts right bracket", 
                 "± ~ Negates the FISRT inserted number", "= ~ Calculates the result"]
 
-# Bind the function to the window so that it can be moved with the cursor
+# Bind the function to the entry widget so that it can be moved with the cursor
 entry.bind("<Button-1>", start_drag)
 entry.bind("<B1-Motion>", move_window)
 
