@@ -86,9 +86,13 @@ def on_leave_backspace(button):
 ###############################################################################
 # Calls the funtion from core to calculate the result of inserted formula
 def calculate_result():
-    tmp = core.calculate(entry.get())
-    entry.delete(0, END)
-    entry.insert(END, tmp)
+    try:
+        result = core.calculate(entry.get())
+        entry.delete(0, END)
+        entry.insert(END, str(result))
+    except ValueError:
+        messagebox.showerror("Error", "Invalid input!")
+
 
 # Funtion that negates the FIRST inserted number
 def negate_number():
@@ -275,6 +279,8 @@ COMMANDS = [    "1 ~ Inserts number 1", "2 ~ Inserts number 2", "3 ~ Inserts num
 # Bind the function to the entry widget so that it can be moved with the cursor
 entry.bind("<Button-1>", start_drag)
 entry.bind("<B1-Motion>", move_window)
+
+window.bind('<Return>', lambda event: calculate_result())
 
 
 window.mainloop()
