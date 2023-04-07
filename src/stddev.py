@@ -1,5 +1,6 @@
 import sys
 import math
+import mathlib
 
 # Read the file name from the command line argument
 if len(sys.argv) != 2:
@@ -17,13 +18,21 @@ if len(numbers) < 1000:
     print("Error: The file must contain at least 1000 numbers.")
     exit()
 
+def summary(numbers):
+    result = 0
+    for number in numbers:
+        result = mathlib.add(None, result, number)
+    return result
+
 # Calculate the sample mean
-mean = sum(numbers) / len(numbers)
+mean = summary(numbers) / len(numbers)
 
 # Calculate the sum of squares of differences from the mean
-squares = sum([(x - mean) ** 2 for x in numbers])
+squares = 0
+for number in numbers:
+    squares = mathlib.add(None, squares, (number - mean) ** 2)
 
 # Calculate the sample standard deviation
-stdev = math.sqrt(squares / (len(numbers) - 1))
+stddev = math.sqrt(mathlib.div(None, squares, len(numbers) - 1))
 
-print("The sample standard deviation is:", stdev)
+print("The sample standard deviation is:", stddev)
