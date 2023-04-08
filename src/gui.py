@@ -16,7 +16,6 @@ from tkinter import *
 from tkinter import messagebox
 import core
 
-
 # Create the main window
 window = Tk()
 window.title("Softhorn Calculator")
@@ -32,7 +31,6 @@ menu_bar.add_cascade(label="Help", menu=help_menu)
 
 # Display the menu bar
 window.config(menu=menu_bar)
-
 
 # Define the function to enable movement while draging the entry widget
 def move_window(event):
@@ -56,7 +54,6 @@ window.config(bg='#ADAEB3')
 icon_file = os.path.abspath('icon.png')
 icon = PhotoImage(file=icon_file)
 window.iconphoto(False, icon)
-
 
 # Create an Entry widget to display the input and output
 entry = Entry(window, width=19, font=("Arial", 28), bg='grey90', relief='flat')
@@ -92,7 +89,6 @@ def calculate_result():
         entry.insert(END, str(result))
     except ValueError:
         messagebox.showerror("Error", "Invalid input!")
-
 
 # Funtion that negates the FIRST inserted number
 def negate_number():
@@ -151,8 +147,6 @@ button_backspace = Button(window, text="⌫", width=5, font=("Arial", 19), heigh
                      relief='flat', bd=3, command=lambda: entry.delete(len(entry.get())-1, END))
 button_dot = Button(window, text=".", width=5, font=("Arial", 19), height=1, fg = 'white', bg='#898C96',
                      relief='flat', bd=3, command=lambda: entry.insert(END, "."))
-
-
 
 # Add the buttons to the window
 # First row of buttons
@@ -280,7 +274,7 @@ COMMANDS = [    "1 ~ Inserts number 1", "2 ~ Inserts number 2", "3 ~ Inserts num
 entry.bind("<Button-1>", start_drag)
 entry.bind("<B1-Motion>", move_window)
 
+# Bind the enter key to calculate result
 window.bind('<Return>', lambda event: calculate_result())
-
 
 window.mainloop()
