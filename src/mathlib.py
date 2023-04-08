@@ -82,7 +82,7 @@ def root(tree, n, x) -> None:
 		raise ValueError('Error: negative root is not defied')
 	if ((x < 0) and (n%2 == 0)):
 		raise ValueError("Error: cant calculate odd root of negative number")
-	return n**(1/x)
+	return x**(1/n)
 
 
 # @brief negate a 

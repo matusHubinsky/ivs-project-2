@@ -110,7 +110,7 @@ def test_nth_root() -> None:
 	assert mathlib.root(None, 2, 0) == 0
 	assert mathlib.root(None, 2, 1) == 1
 	assert mathlib.root(None, 2, 2) == 1.4142135623730951
-	assert mathlib.root(None, 1024, 10) == 2
+	assert mathlib.root(None, 10, 1024) == 2
 	with pytest.raises(ValueError):
 		mathlib.root(None, -1, 1)
 		mathlib.root(None, -1, -2)
