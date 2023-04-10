@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Science
+Exec=softcalc
+GenericName=Simple Calcucaltor
+Icon=/usr/share/pixmaps/icon.png
+Name=Softhorn Calcucaltor
+Type=Application
+X-KDE-StartupNotify=false

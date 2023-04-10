@@ -1,0 +1,9 @@
+install/softicon.png /usr/share/pixmaps
+install/softcalc.desktop /usr/share/applications
+install/softcalc /usr/bin
+core.py /usr/bin
+gui.py /usr/bin
+mathlib.py /usr/bin
+stddev.py /usr/bin
+test.py /usr/bin
+generate_numbers.py /usr/bin
