@@ -30,7 +30,6 @@ from lark import Lark, Transformer, v_args
 
 
 # definicion of a grammar for parser
-# TODO: sqrt()
 grammar = """
 	?start: sum
 		  | NAME "=" sum    		-> assign_var
@@ -42,6 +41,7 @@ grammar = """
 		| product "*" atom  		-> mul
 		| product "/" atom  		-> div
 	?atom: NUMBER           		-> number
+		| "ln" atom					-> ln 
 		| atom "$" atom 			-> root
 		| atom "!"					-> fac 
 		| "-" atom         			-> neg
@@ -52,6 +52,7 @@ grammar = """
 	%import common.WS_INLINE
 	%ignore WS_INLINE
 """
+
 
 
 @v_args(inline=True)    # Affects the signatures of the methods
