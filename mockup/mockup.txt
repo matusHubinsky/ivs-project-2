@@ -1,0 +1,4 @@
+Mockup verison of the Softhorn Calculator.
+
+The calculator would have the mode button on the menu bar, that would be used for swithing modes between standard 
+and scientific calculator. The calculator would have 11 new funtions, including graph creation and BMI.
