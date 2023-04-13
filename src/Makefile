@@ -73,7 +73,7 @@ clean:
 	rm -rf ./dist
 	rm -f *.spec
 	rm -rf doc/ warning_doxygen.txt
-	rm -f __pycache__
+	rm -rf __pycache__
 
 install: softcalc
 	mkdir -p $(DESTDIR)/opt
