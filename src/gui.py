@@ -257,10 +257,10 @@ COMMANDS = [    "1 ~ Inserts number 1", "2 ~ Inserts number 2", "3 ~ Inserts num
                 "5 ~ Inserts number 5", "6 ~ Inserts number 6", "7 ~ Inserts number 7", "8 ~ Inserts number 8",
                 "9 ~ Inserts number 9", "0 ~ Inserts number 0", "+ ~ Inserts sign +",
                 "- ~ Inserts sign -", "* ~ Inserts sign *", "/ ~ Inserts sign /", chr(0x221A)+
-                " ~ Insert the number for root then insert the degree of the root", 'x\u207F ~ Insert number raised to the power n',
+                " ~ Insert the degree of the root then insert the number", 'x\u207F ~ Insert number raised to the power n',
                 "! ~ Calculates the factorial of the inserted number", "C ~ Clears the inserted numbers and signes",
                 "⌫ ~ Deletes the last inserted character", "( ~ Inserts left bracket", ") ~ Inserts right bracket", 
-                "± ~ Negates the FISRT inserted number", "= ~ Calculates the result"]
+                "ln ~ Natural logarithm", "= ~ Calculates the result"]
 
 # Bind the function to the entry widget so that it can be moved with the cursor
 entry.bind("<Button-1>", start_drag)
