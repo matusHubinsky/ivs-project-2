@@ -90,14 +90,6 @@ def calculate_result():
     except ValueError:
         messagebox.showerror("Error", "Invalid input!")
 
-# Funtion that negates the FIRST inserted number
-def negate_number():
-    current_value = entry.get()
-    if current_value.startswith('-'):
-        entry.delete(0, 1)  # delete negative sign
-    else:
-        entry.insert(0, '-')  # insert negative sign
-
 # Create the buttons
 button_1 = Button(window, text="1", width=5, font=("Arial", 19), height=1, fg = 'white', bg='#898C96',
                      relief='flat', bd=3, command=lambda: entry.insert(END, "1"))
@@ -121,8 +113,8 @@ button_0 = Button(window, text="0", width=5, font=("Arial", 19), height=1, fg = 
                      relief='flat', bd=3, command=lambda: entry.insert(END, "0"))
 button_plus = Button(window, text="+", width=5, font=("Arial", 19), height=1, relief='flat', fg = 'white',
                         bd=3, bg='#898C96', command=lambda: entry.insert(END, "+"))
-button_neg = Button(window, text="±", width=5, font=("Arial", 19), height=1, relief='flat', fg='white',
-                        bd=3, bg='#898C96', command=negate_number)
+button_ln = Button(window, text="ln", width=5, font=("Arial", 19), height=1, relief='flat', fg='white',
+                        bd=3, bg='#898C96', command=lambda: entry.insert(END, "ln"))
 button_minus = Button(window, text="-", width=5, height=1, relief='flat', fg = 'white', font=("Arial", 19),
                          bd=3, bg='#898C96', command=lambda: entry.insert(END, "-"))
 button_multiply = Button(window, text="*", width=5, font=("Arial", 19), height=1, relief='flat', fg = 'white',
@@ -180,7 +172,7 @@ button_9.grid(row=6, column=2)
 button_multiply.grid(row=6, column=3)
 
 # Sixth row of buttons
-button_neg.grid(row=7, column=0)
+button_ln.grid(row=7, column=0)
 button_0.grid(row=7, column=1)
 button_dot.grid(row=7, column=2)
 button_equal.grid(row=7, column=3)
@@ -238,8 +230,8 @@ button_power.bind("<Leave>", lambda event, button=button_power: on_leave(button)
 button_faktorial.bind("<Enter>", lambda event, button=button_faktorial: on_enter(button))
 button_faktorial.bind("<Leave>", lambda event, button=button_faktorial: on_leave(button))
 
-button_neg.bind("<Enter>", lambda event, button=button_neg: on_enter(button))
-button_neg.bind("<Leave>", lambda event, button=button_neg: on_leave(button))
+button_ln.bind("<Enter>", lambda event, button=button_ln: on_enter(button))
+button_ln.bind("<Leave>", lambda event, button=button_ln: on_leave(button))
 
 button_clear.bind("<Enter>", lambda event, button=button_clear: on_enter_c(button))
 button_clear.bind("<Leave>", lambda event, button=button_clear: on_leave_c(button))

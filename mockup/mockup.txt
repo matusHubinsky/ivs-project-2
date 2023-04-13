@@ -1,4 +1,23 @@
-Mockup verison of the Softhorn Calculator.
+Proposal for the Softhorn Calculator Mockup Version:
 
-The calculator would have the mode button on the menu bar, that would be used for swithing modes between standard 
-and scientific calculator. The calculator would have 11 new funtions, including graph creation and BMI.
+The proposed mockup version of the Softhorn Calculator features an enhanced user 
+interface with a new "Mode" button added to the menu bar, positioned alongside the 
+existing help button. The "Mode" button allows users to switch between two variations 
+of the calculator: Standard and Scientific.
+
+The Standard calculator retains the current functional capabilities of the calculator, 
+while the Scientific calculator offers extended functionality for tasks such as graph 
+plotting and BMI calculation, among other useful functions.
+
+Upon selecting the Graph button in the Scientific mode, a new "canvas" is generated, 
+displaying a graph of the entered function. Users have the option to store multiple 
+functions and compare them on the same canvas, utilizing a Cartesian coordinate system 
+for accurate scaling and visualization.
+
+Similarly, selecting the BMI option in the Scientific mode prompts the calculator 
+to create a new canvas where users can input their height (in centimeters), age, 
+weight (in kilograms), and gender. After inputting the necessary information, the canvas 
+closes, and the calculated BMI result is displayed on the screen for the user's reference.
+
+The proposed mockup version of the Softhorn Calculator combines enhanced functionality 
+with a user-friendly interface, offering a seamless and professional user experience.
