@@ -58,7 +58,7 @@ grammar = """
 		| product "*" atom  		-> mul
 		| product "/" atom  		-> div
 	?atom: NUMBER           		-> number
-		| "ln" atom					-> ln 
+		| "&" atom					-> ln 
 		| atom "$" atom 			-> root
 		| atom "!"					-> fac 
 		| "-" atom         			-> neg
@@ -74,7 +74,7 @@ grammar = """
 
 @v_args(inline=True)    # Affects the signatures of the methods
 class CalculateTree(Transformer):
-	from mathlib import add, sub, mul, div, fac, exp, neg, root
+	from mathlib import add, sub, mul, div, fac, exp, neg, root, ln
 	number = float
 
 	def __init__(self):
@@ -101,6 +101,7 @@ class CalculateTree(Transformer):
 # @param data, input data from user 
 def calculate(data) -> None:
 	data = data.replace(chr(0x221A), '$')
+	data = data.replace("ln", '&')
 	calc_parser = Lark(grammar, parser='lalr', transformer=CalculateTree())
 	calc = calc_parser.parse
 	print(calc(data))
