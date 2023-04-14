@@ -1,0 +1,12 @@
+8717ccbdcb2ae67301d87e9eec5eb8b8  tmp/requirements.txt
+c21214bed8a4c82383eae712c1fcf0ed  usr/bin/core.py
+d8cc13be05f46d23b29200f818b9ff00  usr/bin/generate_numbers.py
+2a4bbfab0b69f1dc58ff7387fc62a49e  usr/bin/gui.py
+80103dd6d15fbeb4f45965003f663337  usr/bin/mathlib.py
+c55ad20c980589ce8d6927ed1a4fef0e  usr/bin/softcalc
+c2162da760998ef6f296c3d542502be7  usr/bin/stddev.py
+45627c06ad80464c15c37f7cb287ac58  usr/bin/test.py
+569b9f26515c731c3c08ddc9f6d7cfa3  usr/share/applications/softcalc.desktop
+d71b7f8644b10d41cd640552d76ef659  usr/share/doc/softcalc/changelog.gz
+93fb145d75480084d8ef1ff407c54a32  usr/share/doc/softcalc/copyright
+0731d13518bbabc321fdf3dbcb644e84  usr/share/pixmaps/softicon.png

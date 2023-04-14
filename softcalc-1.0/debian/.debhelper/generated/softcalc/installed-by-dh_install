@@ -1,0 +1,10 @@
+./install/softicon.png
+./install/softcalc.desktop
+./install/softcalc
+./core.py
+./gui.py
+./test.py
+./stddev.py
+./mathlib.py
+./generate_numbers.py
+./requirements.txt

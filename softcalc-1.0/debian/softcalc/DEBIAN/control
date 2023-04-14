@@ -1,0 +1,9 @@
+Package: softcalc
+Version: 1.0
+Architecture: amd64
+Maintainer: Boris Hatala <xhatal02@fit.vutbr.cz>
+Installed-Size: 53
+Depends: python3:any, python3-all, python3-pip, python3-tk
+Section: Games
+Priority: optional
+Description: Simple calculator made as a college project

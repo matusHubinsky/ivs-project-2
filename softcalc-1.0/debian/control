@@ -1,16 +1,14 @@
 Source: softcalc
-Section: Education; Science
-Priority: extra
+Section: Games
+Priority: optional
 Maintainer: Boris Hatala <xhatal02@fit.vutbr.cz>
-Build-Depends: debhelper (>= 13)
+Build-Depends: debhelper (>= 13), dh-python, python3-all, python3-tk, python3-pip
 Standards-Version: 4.6.0
-Homepage: <https://github.com/matusHubinsky/ivs-project-2>
-#Vcs-Browser: https://salsa.debian.org/debian/softcalc
-#Vcs-Git: https://salsa.debian.org/debian/softcalc.git
 Rules-Requires-Root: no
+#XS-Python-Version: 3.10.6
+#X-Python3-Version: 3.10.6
 
 Package: softcalc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, python3, python3-pip, python3-tk
-Description: Simple calculator
- This calculator was made as a college project.
+Depends: ${misc:Depends}, ${python3:Depends}, python3-all, python3-tk, python3-pip
+Description: Simple calculator made as a college project 
