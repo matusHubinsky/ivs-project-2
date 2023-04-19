@@ -17,7 +17,6 @@ import pytest
 import mathlib
 
 
-# TODO: test for priority
 # @brief tests for the whole module calculate
 # @param None
 # @return None
@@ -27,7 +26,13 @@ def test_calculate() -> None:
 	assert core.calculate("1000+2000") == 3000
 	assert core.calculate("5*(5+5)") == 50
 	assert core.calculate("2^10+1") == 1025
-
+	assert core.calculate("1*2+(6*4+(3+4)+7^5)/4") == 4211.5
+	assert core.calculate("5!+3") == 123
+	assert core.calculate("2$2^2") == 2.0000000000000004
+	assert core.calculate("((2*3))^(5+(2-5*(3/3)))") == 36
+	assert core.calculate("&1+&1*&1") == 0
+	assert core.calculate("&2+&2*&2") == 1.1735997636089999
+ 
 
 # @brief tests for function add() from mathlib
 # @param None
