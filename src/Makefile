@@ -14,9 +14,7 @@
 # ##################################################################
 
 PY = python3
-PYINSTALL = pyinstaller
 PYTEST = pytest
-INSFLAGS = -m -0755
 
 DESTDIR = $(HOME)
 ZIPNAME = xhubin04_xduric07_xhatal02.zip
@@ -43,11 +41,6 @@ help:
 #Option all compiles whole project also profiling
 all: softcalc 
 
-softcalc: core.py
-	pyi-makespec $^.py
-	pyinstaller core.spec
-
-
 #Option pack packs-up contents of the project for handing out
 pack: clean
 	cd .. && zip -r $(ZIPNAME) *
@@ -66,7 +59,7 @@ doc:
 
 #Option profile runs the program for calculation of decisive derivant for profiling
 profile: $(PROFILING)
-
+	$(PY) $^ *.txt
 #Option clean removes all the files that have been created after compiling and are not needed for handing out the project
 clean:
 	rm -rf ./build 
@@ -74,10 +67,6 @@ clean:
 	rm -f *.spec
 	rm -rf doc/ warning_doxygen.txt
 	rm -rf __pycache__
-
-install: softcalc
-	mkdir -p $(DESTDIR)/opt
-	cd dist; find kufr -type f -exec install -D $(INSFLAGS) "{}" "$(DESTDIR)/opt/{}" \;
 
 .PHONY: all clean test profile run pack doc install
 ### End of file Makefile ###
