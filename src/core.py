@@ -88,6 +88,7 @@ class CalculateTree(Transformer):
 		try:
 			return self.vars[name]
 		except KeyError:
+			self.vars = {}
 			raise Exception("Variable not found: %s" % name)
 
 
@@ -98,13 +99,16 @@ class CalculateTree(Transformer):
 # Parser creates ASS that is procesed by CalculateTree() function. In this funcion,
 # we are caling our math library named mathlib.py
 # 
-# @param data, input data from user 
+# @param data, input data from user to calculate
+# @return result, return resoult of a math expresion from a user
 def calculate(data) -> None:
 	data = data.replace(chr(0x221A), '$')
-	data = data.replace("ln", '&')
+	data = data.replace("ln", '&') 
 	calc_parser = Lark(grammar, parser='lalr', transformer=CalculateTree())
 	calc = calc_parser.parse
-	print(calc(data))
-	return calc(data)
-
+	try:
+		result = calc(data)
+		return result
+	except:
+		raise ValueError("Wrong input")
 ###############################################################################
