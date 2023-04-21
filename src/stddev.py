@@ -66,4 +66,4 @@ stddev = mathlib.root(None, mathlib.div(None, squares, len(numbers) - 1), 2)
 
 # Print the result of the sample standard deviation
 # @brief prints out the result of the sample standard deviation into the terminal
-print("The sample standard deviation is:", stddev)
+print(stddev)
