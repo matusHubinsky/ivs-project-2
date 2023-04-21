@@ -44,11 +44,8 @@ all:
 #Option pack zips contents of the project for handing out
 pack: clean
 	rm -rf ../../$(ZIPNAME)
-	mkdir -p ../../$(ZIPNAME)/doc && cp -ar ../../doc/. ../../$(ZIPNAME)/doc
-	mkdir -p ../../$(ZIPNAME)/repo && cp -r ../../ivs-project2/. ../../$(ZIPNAME)/repo
-	mkdir ../../$(ZIPNAME)/install && cp -r ../../install/. ../../$(ZIPNAME)/install
-	cd ../.. && zip -qr $(ZIPNAME).zip $(ZIPNAME)
-	cd ../.. && rm -rf $(ZIPNAME)
+	cd .. && 	zip -r $(ZIPNAME) *
+	cd .. && mv $(ZIPNAME) ..
 
 #Option test runs tests for math library
 test: $(TEST)
@@ -66,7 +63,7 @@ doc: clean
 #Option profile runs the program for calculation of decisive derivant for profiling
 profile: $(PROFILING)
 	$(PY) $^ *.txt
-
+	
 #Option clean removes all the files that have been created after compiling and are not needed for handing out the project
 clean:
 	rm -rf ./build 
