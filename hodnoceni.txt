@@ -1,3 +1,3 @@
-xduric07 0 ()
-xhatal02 0 ()
-xhubin04 0 ()
+xduric07 100 (GUI, profiling, mockup)
+xhatal02 100 (Makefile, Dokumentácia, Inštalátor)
+xhubin04 100 (testy pre mathlib, mathlib, jadro na spracovanie výrazov)
