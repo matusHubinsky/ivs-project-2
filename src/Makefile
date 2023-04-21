@@ -16,7 +16,6 @@
 PY = python3
 PYTEST = pytest
 
-DESTDIR = $(HOME)
 ZIPNAME = xhubin04_xduric07_xhatal02.zip
 
 GUI = gui.py
@@ -38,12 +37,18 @@ help:
 	@echo "	profile 	runs the program for calculation of decisive derivant for profiling	"
 	@echo "	clean 		deletes all the files that are not neccessary for compiling   	  	"
 
-#Option all compiles whole project also profiling
-all: softcalc 
+#Option all download neccessary dependencies for running this project
+all:
+	sudo apt install python3-tk python3-pip && pip3 install lark pytest
 
-#Option pack packs-up contents of the project for handing out
+#Option pack zips contents of the project for handing out
 pack: clean
-	cd .. && zip -r $(ZIPNAME) *
+	rm -rf ../../$(ZIPNAME)
+	mkdir -p ../../$(ZIPNAME)/doc && cp -ar ../../doc/. ../../$(ZIPNAME)/doc
+	mkdir -p ../../$(ZIPNAME)/repo && cp -r ../../ivs-project2/. ../../$(ZIPNAME)/repo
+	mkdir ../../$(ZIPNAME)/install && cp -r ../../install/. ../../$(ZIPNAME)/install
+	cd ../.. && zip -qr $(ZIPNAME).zip $(ZIPNAME)
+	cd ../.. && rm -rf $(ZIPNAME)
 
 #Option test runs tests for math library
 test: $(TEST)
@@ -54,18 +59,21 @@ run: $(GUI)
 	$(PY) $^
 
 #Option doc generates documentation for the project
-doc:
+doc: clean
 	doxygen Doxyfile
+	mv doc ..
 
 #Option profile runs the program for calculation of decisive derivant for profiling
 profile: $(PROFILING)
 	$(PY) $^ *.txt
+
 #Option clean removes all the files that have been created after compiling and are not needed for handing out the project
 clean:
 	rm -rf ./build 
 	rm -rf ./dist
 	rm -f *.spec
-	rm -rf doc/ warning_doxygen.txt
+	rm -rf ../doc/ 
+	rm -f warning_doxygen.txt
 	rm -rf __pycache__
 
 .PHONY: all clean test profile run pack doc install
