@@ -1,0 +1,19 @@
+
+(20) mathlib.add  0.0000097752
+(1)  mathlib.div  0.0000007153
+(1)  mathlib.root 0.0000011921
+1.000000183782492
+
+(2020) mathlib.add  0.0000748634
+(1)    mathlib.div  0.0000007153
+(1)    mathlib.root 0.0000023842
+1.0000000791329637
+
+(2000000) mathlib.add  0.0641195774
+(1)       mathlib.div  0.0000030994
+(1)       mathlib.root 0.0000040531
+1.0000000831557239
+
+Program trávi najviac času pri volaním opakovanom volaní inštrukcie mathlib.add. 
+Pri v stupe s 10^6 čísel bol rozdiel v porovnaní s ostatnými inštrukciami
+v štyroch rádoch. Pri ďalšom vývoji by sme sa zamerali na urýchlenie tejto inštrukcie. 
