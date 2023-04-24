@@ -16,7 +16,7 @@
 PY = python3
 PYTEST = pytest
 
-ZIPNAME = xhubin04_xduric07_xhatal02.zip
+ZIPNAME = xhubin04_xduric07_xhatal02
 
 GUI = gui.py
 TEST = test.py
@@ -43,9 +43,12 @@ all:
 
 #Option pack zips contents of the project for handing out
 pack: clean
+	rm -rf ../../$(ZIPNAME).zip ../../$(ZIPNAME)
+	cd ../../ && mkdir $(ZIPNAME)
+	cd .. && cp -r * ../$(ZIPNAME)/
+	cd ../../ && zip -r $(ZIPNAME).zip $(ZIPNAME) 
 	rm -rf ../../$(ZIPNAME)
-	cd .. && 	zip -r $(ZIPNAME) *
-	cd .. && mv $(ZIPNAME) ..
+
 
 #Option test runs tests for math library
 test: $(TEST)
