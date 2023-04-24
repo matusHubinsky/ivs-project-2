@@ -1,0 +1,9 @@
+Od plánu sme sa od sa vychílili z dôvodu rozhodnutia naprogramovať rozšírenie 
+"Výpočty so zátvorkami". Z tohto dôvodu sme museli meniť GUI a matematickú
+knižnicu. Pri vytváraní inštalátoru vznikli problémy s ktorými sme nerátali, 
+čo malo za následok rozdiel oproti pôvodnému plánu. Vytváranie inštalátru bolo 
+oneskorené aj kvôli čakaniua ďalšie verzie GUI a matematickej knižnice s 
+rozšírením: "Výpočty so zátvorkami"
+
+Dohodnuté deadliny sme všetci dodržiavali, posúvali sme ich iba v prípade ak sa 
+objavili nové problémy s ktorými sme nepočítali.
