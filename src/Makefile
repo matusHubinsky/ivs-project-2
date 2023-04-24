@@ -42,7 +42,7 @@ all:
 	sudo apt install python3-tk python3-pip && pip3 install lark pytest
 
 #Option pack zips contents of the project for handing out
-pack: clean
+pack: clean doc
 	rm -rf ../../$(ZIPNAME).zip ../../$(ZIPNAME)
 	cd ../../ && mkdir $(ZIPNAME)
 	cd .. && cp -r * ../$(ZIPNAME)/
@@ -59,20 +59,20 @@ run: $(GUI)
 	$(PY) $^
 
 #Option doc generates documentation for the project
-doc: clean
+doc: clean 
 	doxygen Doxyfile
 	mv doc ..
 
 #Option profile runs the program for calculation of decisive derivant for profiling
 profile: $(PROFILING)
-	$(PY) $^ *.txt
+	@ $(PY) $^ *.txt
 	
 #Option clean removes all the files that have been created after compiling and are not needed for handing out the project
 clean:
 	rm -rf ./build 
 	rm -rf ./dist
+	rm -rf ../doc
 	rm -f *.spec
-	rm -rf ../doc/ 
 	rm -f warning_doxygen.txt
 	rm -rf __pycache__
 
