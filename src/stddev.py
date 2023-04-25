@@ -16,13 +16,13 @@ import sys
 import math
 import mathlib
 
-directory = './'  
+directory = os.path.abspath(os.path.dirname(__file__))
 files_in_directory = os.listdir(directory)
 files_txt = [file for file in files_in_directory if file.endswith('.txt')]
 
 if (len(files_txt) == 1):
     # Read the file name from the list of files in the directory 
-    file_name = files_txt[0]
+    file_name = os.path.abspath(os.path.dirname(__file__)) + "/" + files_txt[0]
 elif (len(sys.argv) == 2): 
 	# Read the file name from the command line argument
 	file_name = sys.argv[1]
