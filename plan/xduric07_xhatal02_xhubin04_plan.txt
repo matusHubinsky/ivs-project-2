@@ -1,0 +1,19 @@
+## Rozdelenie úloh
+- Adam Ďurica:      gui, profiling
+- Boris Hatala:     dokumentácia (programová + uźivateľská), makefile, 
+- Matúš Hubinský:   core, testy pre core
+
+## Termíny vypracovania úloh
+- testy pre core:           11.03.2023
+- makefile:                 25.03.2023
+- gui:                      25.03.2023
+- core:                     25.03.2023
+- profiling:                01.04.2023
+- uživateľská dokumentácia: 01.04.2023
+- programová dokumentácia:  01.04.2023
+
+## Komunikačné kanály
+- discord
+
+## Systém pre správu verzií
+- github
