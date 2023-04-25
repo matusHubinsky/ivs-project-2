@@ -115,8 +115,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1ba59a7224e2e72286d4fe62c4ff63b0"><td class="memItemLeft" align="right" valign="top">sys&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a1ba59a7224e2e72286d4fe62c4ff63b0">stddev.file_name</a> = sys.argv[1]</td></tr>
-<tr class="separator:a1ba59a7224e2e72286d4fe62c4ff63b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4176b154ed2000bc32ced0edb847c0"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0">stddev.directory</a> = os.path.abspath(os.path.dirname(__file__))</td></tr>
+<tr class="separator:a0f4176b154ed2000bc32ced0edb847c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd6bd05a518489122c44e94ed26c1e9"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#aadd6bd05a518489122c44e94ed26c1e9">stddev.files_in_directory</a> = os.listdir(directory)</td></tr>
+<tr class="separator:aadd6bd05a518489122c44e94ed26c1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4bc90e39e491caab9d57b3dfa8defe"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#aea4bc90e39e491caab9d57b3dfa8defe">stddev.files_txt</a> = [file for file in files_in_directory if file.endswith('.txt')]</td></tr>
+<tr class="separator:aea4bc90e39e491caab9d57b3dfa8defe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5916dd269d0af28bc7675ee7906ea92c"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a5916dd269d0af28bc7675ee7906ea92c">stddev.file_name</a> = os.path.abspath(os.path.dirname(__file__)) + &quot;/&quot; + files_txt[0]</td></tr>
+<tr class="separator:a5916dd269d0af28bc7675ee7906ea92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3473b6d1416bb2fec910b6198843555"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#af3473b6d1416bb2fec910b6198843555">stddev.else</a> :</td></tr>
+<tr class="separator:af3473b6d1416bb2fec910b6198843555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9ba43c748d6a7456e5ce7955ee8937"><td class="memItemLeft" align="right" valign="top">f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">stddev.numbers</a> = f.read().split()</td></tr>
 <tr class="separator:a7b9ba43c748d6a7456e5ce7955ee8937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac768fb7d7488c4a206f0cdeeb2f763fc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#ac768fb7d7488c4a206f0cdeeb2f763fc">stddev.mean</a> = summary(numbers) / len(numbers)</td></tr>
@@ -129,8 +137,8 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Name of the project: ivs project 2. </p>
 <p>file to calculate sample standard deviation</p>
-<dl class="section date"><dt>Date</dt><dd>08.04.2023 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Adam Ďurica </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>25.04.2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Adam Ďurica, Matúš Hubinský </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 </div></div><!-- contents -->

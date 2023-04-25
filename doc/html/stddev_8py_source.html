@@ -101,52 +101,61 @@ $(document).ready(function(){initNavTree('stddev_8py_source.html',''); initResiz
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"># @file stddev.py</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"># @brief file to calculate sample standard deviation </span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">#</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"># @date 08.04.2023</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"># @author Adam Ďurica</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"># @date 25.04.2023</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"># @author Adam Ďurica, Matúš Hubinský</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">#</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">###############################################################################</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> sys</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> math</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> mathlib</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"># Read the file name from the command line argument</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordflow">if</span> len(sys.argv) != 2:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    print(<span class="stringliteral">&quot;Usage: python sample_standard_deviation.py &lt;file_name&gt;&quot;</span>)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    exit()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacestddev.html#a1ba59a7224e2e72286d4fe62c4ff63b0">   22</a></span>file_name = sys.argv[1]</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"># Read the numbers from the file</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">with</span> open(file_name, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">   26</a></span>    numbers = f.read().split()</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    numbers = [float(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> numbers <span class="keywordflow">if</span> x != <span class="stringliteral">&#39;&#39;</span>]</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"># @brief calculates sum of all numbers in text file</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"># @param result, number</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"># @return result sum of all numbers in text file</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">   32</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">summary</a>(numbers):</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    result = 0</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">for</span> number <span class="keywordflow">in</span> numbers:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        result = <a class="code hl_function" href="namespacemathlib.html#a6485442f037cad2df22b735f893ef4bf">mathlib.add</a>(<span class="keywordtype">None</span>, result, number)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> result</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> os</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> sys</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> math</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> mathlib</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0">   19</a></span>directory = os.path.abspath(os.path.dirname(__file__))</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacestddev.html#aadd6bd05a518489122c44e94ed26c1e9">   20</a></span>files_in_directory = os.listdir(directory)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacestddev.html#aea4bc90e39e491caab9d57b3dfa8defe">   21</a></span>files_txt = [file <span class="keywordflow">for</span> file <span class="keywordflow">in</span> files_in_directory <span class="keywordflow">if</span> file.endswith(<span class="stringliteral">&#39;.txt&#39;</span>)]</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordflow">if</span> (len(files_txt) == 1):</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment"># Read the file name from the list of files in the directory </span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacestddev.html#a5916dd269d0af28bc7675ee7906ea92c">   25</a></span>    file_name = os.path.abspath(os.path.dirname(__file__)) + <span class="stringliteral">&quot;/&quot;</span> + files_txt[0]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordflow">elif</span> (len(sys.argv) == 2): </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment"># Read the file name from the command line argument</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    file_name = sys.argv[1]</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacestddev.html#af3473b6d1416bb2fec910b6198843555">   29</a></span><span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    print(<span class="stringliteral">&quot;Usage: python sample_standard_deviation.py &lt;file_name&gt;&quot;</span>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    exit()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"># Read the numbers from the file</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">with</span> open(file_name, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">   35</a></span>    numbers = f.read().split()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    numbers = [float(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> numbers <span class="keywordflow">if</span> x != <span class="stringliteral">&#39;&#39;</span>]</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"># Calculate the sample mean</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacestddev.html#ac768fb7d7488c4a206f0cdeeb2f763fc">   39</a></span>mean = <a class="code hl_function" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">summary</a>(numbers) / len(numbers)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"># Calculate the sum of squares of differences from the mean</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacestddev.html#acf6016f672723d781cb7d3370ae8638b">   42</a></span>squares = 0</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordflow">for</span> number <span class="keywordflow">in</span> numbers:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    squares = <a class="code hl_function" href="namespacemathlib.html#a6485442f037cad2df22b735f893ef4bf">mathlib.add</a>(<span class="keywordtype">None</span>, squares, (number - mean) ** 2)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"># Calculate the sample standard deviation</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespacestddev.html#a3f899a5e19efe7916055bfcfe1ca5ba6">   47</a></span>stddev = <a class="code hl_function" href="namespacemathlib.html#a24d2ea2b911c2e6b75c78484f5c60bc6">mathlib.root</a>(<span class="keywordtype">None</span>, <a class="code hl_function" href="namespacemathlib.html#a6c002dac06374bbad9a05e3f96d67651">mathlib.div</a>(<span class="keywordtype">None</span>, squares, len(numbers) - 1), 2)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"># Print the result of the sample standard deviation</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>print(stddev)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"># @brief calculates sum of all numbers in text file</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"># @param result, number</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"># @return result sum of all numbers in text file</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">   41</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">summary</a>(numbers):</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    result = 0</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">for</span> number <span class="keywordflow">in</span> numbers:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        result = <a class="code hl_function" href="namespacemathlib.html#a6485442f037cad2df22b735f893ef4bf">mathlib.add</a>(<span class="keywordtype">None</span>, result, number)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> result</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"># Calculate the sample mean</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespacestddev.html#ac768fb7d7488c4a206f0cdeeb2f763fc">   48</a></span>mean = <a class="code hl_function" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">summary</a>(numbers) / len(numbers)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"># Calculate the sum of squares of differences from the mean</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespacestddev.html#acf6016f672723d781cb7d3370ae8638b">   51</a></span>squares = 0</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordflow">for</span> number <span class="keywordflow">in</span> numbers:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    squares = <a class="code hl_function" href="namespacemathlib.html#a6485442f037cad2df22b735f893ef4bf">mathlib.add</a>(<span class="keywordtype">None</span>, squares, (number - mean) ** 2)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"># Calculate the sample standard deviation</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacestddev.html#a3f899a5e19efe7916055bfcfe1ca5ba6">   56</a></span>stddev = <a class="code hl_function" href="namespacemathlib.html#a24d2ea2b911c2e6b75c78484f5c60bc6">mathlib.root</a>(<span class="keywordtype">None</span>, <a class="code hl_function" href="namespacemathlib.html#a6c002dac06374bbad9a05e3f96d67651">mathlib.div</a>(<span class="keywordtype">None</span>, squares, len(numbers) - 1), 2)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"># Print the result of the sample standard deviation</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>print(stddev)</div>
 <div class="ttc" id="anamespacemathlib_html_a24d2ea2b911c2e6b75c78484f5c60bc6"><div class="ttname"><a href="namespacemathlib.html#a24d2ea2b911c2e6b75c78484f5c60bc6">mathlib.root</a></div><div class="ttdeci">None root(tree, n, x)</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8py_source.html#l00077">mathlib.py:77</a></div></div>
 <div class="ttc" id="anamespacemathlib_html_a6485442f037cad2df22b735f893ef4bf"><div class="ttname"><a href="namespacemathlib.html#a6485442f037cad2df22b735f893ef4bf">mathlib.add</a></div><div class="ttdeci">int add(tree, a, b)</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8py_source.html#l00019">mathlib.py:19</a></div></div>
 <div class="ttc" id="anamespacemathlib_html_a6c002dac06374bbad9a05e3f96d67651"><div class="ttname"><a href="namespacemathlib.html#a6c002dac06374bbad9a05e3f96d67651">mathlib.div</a></div><div class="ttdeci">int div(tree, a, b)</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8py_source.html#l00045">mathlib.py:45</a></div></div>
-<div class="ttc" id="anamespacestddev_html_acd67bd80cf54d4bf4c176dcefbfec8f5"><div class="ttname"><a href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">stddev.summary</a></div><div class="ttdeci">def summary(numbers)</div><div class="ttdef"><b>Definition:</b> <a href="stddev_8py_source.html#l00032">stddev.py:32</a></div></div>
+<div class="ttc" id="anamespacestddev_html_acd67bd80cf54d4bf4c176dcefbfec8f5"><div class="ttname"><a href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">stddev.summary</a></div><div class="ttdeci">def summary(numbers)</div><div class="ttdef"><b>Definition:</b> <a href="stddev_8py_source.html#l00041">stddev.py:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

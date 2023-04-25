@@ -104,8 +104,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1ba59a7224e2e72286d4fe62c4ff63b0"><td class="memItemLeft" align="right" valign="top">sys&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a1ba59a7224e2e72286d4fe62c4ff63b0">file_name</a> = sys.argv[1]</td></tr>
-<tr class="separator:a1ba59a7224e2e72286d4fe62c4ff63b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4176b154ed2000bc32ced0edb847c0"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0">directory</a> = os.path.abspath(os.path.dirname(__file__))</td></tr>
+<tr class="separator:a0f4176b154ed2000bc32ced0edb847c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd6bd05a518489122c44e94ed26c1e9"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#aadd6bd05a518489122c44e94ed26c1e9">files_in_directory</a> = os.listdir(<a class="el" href="namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0">directory</a>)</td></tr>
+<tr class="separator:aadd6bd05a518489122c44e94ed26c1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4bc90e39e491caab9d57b3dfa8defe"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#aea4bc90e39e491caab9d57b3dfa8defe">files_txt</a> = [file for file in <a class="el" href="namespacestddev.html#aadd6bd05a518489122c44e94ed26c1e9">files_in_directory</a> if file.endswith('.txt')]</td></tr>
+<tr class="separator:aea4bc90e39e491caab9d57b3dfa8defe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5916dd269d0af28bc7675ee7906ea92c"><td class="memItemLeft" align="right" valign="top">os&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a5916dd269d0af28bc7675ee7906ea92c">file_name</a> = os.path.abspath(os.path.dirname(__file__)) + &quot;/&quot; + <a class="el" href="namespacestddev.html#aea4bc90e39e491caab9d57b3dfa8defe">files_txt</a>[0]</td></tr>
+<tr class="separator:a5916dd269d0af28bc7675ee7906ea92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3473b6d1416bb2fec910b6198843555"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#af3473b6d1416bb2fec910b6198843555">else</a> :</td></tr>
+<tr class="separator:af3473b6d1416bb2fec910b6198843555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9ba43c748d6a7456e5ce7955ee8937"><td class="memItemLeft" align="right" valign="top">f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">numbers</a> = f.read().split()</td></tr>
 <tr class="separator:a7b9ba43c748d6a7456e5ce7955ee8937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac768fb7d7488c4a206f0cdeeb2f763fc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestddev.html#ac768fb7d7488c4a206f0cdeeb2f763fc">mean</a> = <a class="el" href="namespacestddev.html#acd67bd80cf54d4bf4c176dcefbfec8f5">summary</a>(<a class="el" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">numbers</a>) / len(<a class="el" href="namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937">numbers</a>)</td></tr>
@@ -132,24 +140,88 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00032">32</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00041">41</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a1ba59a7224e2e72286d4fe62c4ff63b0" name="a1ba59a7224e2e72286d4fe62c4ff63b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ba59a7224e2e72286d4fe62c4ff63b0">&#9670;&#160;</a></span>file_name</h2>
+<a id="a0f4176b154ed2000bc32ced0edb847c0" name="a0f4176b154ed2000bc32ced0edb847c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4176b154ed2000bc32ced0edb847c0">&#9670;&#160;</a></span>directory</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sys stddev.file_name = sys.argv[1]</td>
+          <td class="memname">os stddev.directory = os.path.abspath(os.path.dirname(__file__))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00022">22</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00019">19</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+
+</div>
+</div>
+<a id="af3473b6d1416bb2fec910b6198843555" name="af3473b6d1416bb2fec910b6198843555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3473b6d1416bb2fec910b6198843555">&#9670;&#160;</a></span>else</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">stddev.else :</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00029">29</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+
+</div>
+</div>
+<a id="a5916dd269d0af28bc7675ee7906ea92c" name="a5916dd269d0af28bc7675ee7906ea92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5916dd269d0af28bc7675ee7906ea92c">&#9670;&#160;</a></span>file_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sys stddev.file_name = os.path.abspath(os.path.dirname(__file__)) + &quot;/&quot; + <a class="el" href="namespacestddev.html#aea4bc90e39e491caab9d57b3dfa8defe">files_txt</a>[0]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00025">25</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+
+</div>
+</div>
+<a id="aadd6bd05a518489122c44e94ed26c1e9" name="aadd6bd05a518489122c44e94ed26c1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd6bd05a518489122c44e94ed26c1e9">&#9670;&#160;</a></span>files_in_directory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">os stddev.files_in_directory = os.listdir(<a class="el" href="namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0">directory</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00020">20</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+
+</div>
+</div>
+<a id="aea4bc90e39e491caab9d57b3dfa8defe" name="aea4bc90e39e491caab9d57b3dfa8defe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4bc90e39e491caab9d57b3dfa8defe">&#9670;&#160;</a></span>files_txt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list stddev.files_txt = [file for file in <a class="el" href="namespacestddev.html#aadd6bd05a518489122c44e94ed26c1e9">files_in_directory</a> if file.endswith('.txt')]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00021">21</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>
@@ -165,7 +237,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00039">39</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00048">48</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>
@@ -181,7 +253,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00026">26</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00035">35</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>
@@ -197,7 +269,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00042">42</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00051">51</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>
@@ -213,7 +285,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00047">47</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stddev_8py_source.html#l00056">56</a> of file <a class="el" href="stddev_8py_source.html">stddev.py</a>.</p>
 
 </div>
 </div>

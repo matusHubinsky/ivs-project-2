@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['number_0',['number',['../classcore_1_1CalculateTree.html#acf4ea00294825e175d06879e79590522',1,'core::CalculateTree']]],
-  ['numbers_1',['numbers',['../namespacestddev.html#a7b9ba43c748d6a7456e5ce7955ee8937',1,'stddev']]]
+  ['mean_0',['mean',['../namespacestddev.html#ac768fb7d7488c4a206f0cdeeb2f763fc',1,'stddev']]],
+  ['menu_1',['menu',['../namespacegui.html#a917d5683d6b55a94bfeff89e72faf561',1,'gui']]],
+  ['menu_5fbar_2',['menu_bar',['../namespacegui.html#a0686ccc5c0185112f57958d09793392f',1,'gui']]]
 ];

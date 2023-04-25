@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_0',['window',['../namespacegui.html#a44d8c8462f723519bc6fc8ba0b53b2b6',1,'gui']]]
+  ['vars_0',['vars',['../classcore_1_1CalculateTree.html#a91ee55db187b02d47c1e50d6db358d4c',1,'core::CalculateTree']]]
 ];

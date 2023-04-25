@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['entry_0',['entry',['../namespacegui.html#a748390eb7c9f9942b2b51d1a42c0315e',1,'gui']]],
-  ['event_1',['event',['../namespacegui.html#a7b9f776299ea9551381803e1326a13d1',1,'gui']]]
+  ['directory_0',['directory',['../namespacestddev.html#a0f4176b154ed2000bc32ced0edb847c0',1,'stddev']]]
 ];
