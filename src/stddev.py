@@ -6,20 +6,29 @@
 # @file stddev.py
 # @brief file to calculate sample standard deviation 
 #
-# @date 08.04.2023
-# @author Adam Ďurica
+# @date 25.04.2023
+# @author Adam Ďurica, Matúš Hubinský
 #
 ###############################################################################
 
+import os
 import sys
 import math
 import mathlib
 
-# Read the file name from the command line argument
-if len(sys.argv) != 2:
+directory = './'  
+files_in_directory = os.listdir(directory)
+files_txt = [file for file in files_in_directory if file.endswith('.txt')]
+
+if (len(files_txt) == 1):
+    # Read the file name from the list of files in the directory 
+    file_name = files_txt[0]
+elif (len(sys.argv) == 2): 
+	# Read the file name from the command line argument
+	file_name = sys.argv[1]
+else:
     print("Usage: python sample_standard_deviation.py <file_name>")
     exit()
-file_name = sys.argv[1]
 
 # Read the numbers from the file
 with open(file_name, 'r') as f:
