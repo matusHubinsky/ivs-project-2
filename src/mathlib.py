@@ -49,7 +49,7 @@ def div(tree, a, b) -> int:
 
 
 # @brief calculate resoult of a @a to @b power
-# @param a, bae
+# @param a
 # @param b, exponent
 # @return a^b
 def exp(tree, a, b) -> None:
