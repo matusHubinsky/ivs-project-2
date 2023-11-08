@@ -13,3 +13,7 @@ _Softhorn_
 ## Licence
 
 Tento program je poskytovaný pod GPL-3.0 licenciou
+
+## Vysledok
+
+body: 46/52
